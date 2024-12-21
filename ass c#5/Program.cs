@@ -2,6 +2,18 @@
 {
     internal class Program
     {
+        public static bool checkPrime(int num)
+        {
+            // Loop to check for factors of the number
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0)
+                {
+                    return false; // If any factor found, the number is not prime, return false
+                }
+            }
+            return true; // If no factors found, the number is prime, return true
+        }
         public static void SumSub(int x, int y, out int sum, out int sub)
         {
             sum = x + y;
@@ -82,14 +94,14 @@
 
 
             #region Q3 - Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
-            Console.Write("Enter Number: ");
-            int.TryParse(Console.ReadLine(), out int number01);
-            Console.Write("Enter Number: ");
-            int.TryParse(Console.ReadLine(), out int number02);
-            int SumResult, SubResult;
-            SumSub(number01, number02, out SumResult, out SubResult); // Passing By Out
-            Console.WriteLine($"summation = {SumResult}"); 
-            Console.WriteLine($"subtracting = {SubResult}"); 
+            //Console.Write("Enter Number: ");
+            //int.TryParse(Console.ReadLine(), out int number01);
+            //Console.Write("Enter Number: ");
+            //int.TryParse(Console.ReadLine(), out int number02);
+            //int SumResult, SubResult;
+            //SumSub(number01, number02, out SumResult, out SubResult); // Passing By Out
+            //Console.WriteLine($"summation = {SumResult}"); 
+            //Console.WriteLine($"subtracting = {SubResult}");
             #endregion
 
             #region Q4 - Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
@@ -105,7 +117,16 @@
             #endregion
 
             #region Q5 - Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not:
-
+            //Console.Write("Input a number : ");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //if (checkPrime(n))
+            //{
+            //    Console.WriteLine(n + " is a prime number"); // Display if the number is prime
+            //}
+            //else
+            //{
+            //    Console.WriteLine(n + " is not a prime number"); // Display if the number is not prime
+            //}
             #endregion
 
             #region Q6 - Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
