@@ -2,6 +2,11 @@
 {
     internal class Program
     {
+        public static void SumSub(int x, int y, out int sum, out int sub)
+        {
+            sum = x + y;
+            sub = x - y;
+        }
         public static int SumCal(int n)
         {
             // Convert the number to a string
@@ -67,26 +72,24 @@
 
             #region  Q2 - Explain the difference between passing(Reference type parameters) by value and by reference then write a suitable c# example.
             #region Passing By Value
-            //int[] numbers = { 1, 2, 3 };
-            //int result = SumArray(numbers); // Passing By Value [Address]
-            //Console.WriteLine(numbers.GetHashCode());
-            //Console.WriteLine($"Sum =  {result}"); // 105
-            //Console.WriteLine($"Numbers[0] = {numbers[0]}"); // 100
-
 
             #endregion
 
             #region Passing by Reference 
-            //int[] numbers = { 1, 2, 3 };
-            //int result = SumArray(ref numbers); // Passing By Reference [Reference of Array : numbers]
-            //Console.WriteLine($"Sum =  {result}"); // 105
-            //Console.WriteLine($"Numbers[0] = {numbers[0]}"); // 100
+ 
             #endregion
             #endregion
 
 
             #region Q3 - Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
-
+            Console.Write("Enter Number: ");
+            int.TryParse(Console.ReadLine(), out int number01);
+            Console.Write("Enter Number: ");
+            int.TryParse(Console.ReadLine(), out int number02);
+            int SumResult, SubResult;
+            SumSub(number01, number02, out SumResult, out SubResult); // Passing By Out
+            Console.WriteLine($"summation = {SumResult}"); 
+            Console.WriteLine($"subtracting = {SubResult}"); 
             #endregion
 
             #region Q4 - Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
